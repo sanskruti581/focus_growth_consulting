@@ -55,10 +55,6 @@ export default function HomePage() {
                   We start with the business problem, set clearer priorities, and execute with systems that stay
                   measurable.
                 </p>
-
-                <blockquote className="why-editorial-quote">
-                  "Less noise. Better decisions. One clearer growth system."
-                </blockquote>
               </div>
 
               <div className="why-comparison-panel">
@@ -78,6 +74,10 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
+
+            <blockquote className="why-editorial-quote">
+              "Less noise. Better decisions. One clearer growth system."
+            </blockquote>
           </div>
         </div>
       </section>
@@ -93,10 +93,15 @@ export default function HomePage() {
 
           <div className="home-process-grid">
             {processSteps.map((step) => (
-              <article key={step.index} className="home-process-item">
-                <span className="step-index">{step.index}</span>
-                <h3>{step.title}</h3>
-                <p>{step.detail}</p>
+              <article
+                key={step.index}
+                className={`home-process-item${step.index === '03' ? ' home-process-item-featured' : ''}`}
+              >
+                <span className="step-index home-process-step-index">{step.index}</span>
+                <div className="home-process-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </div>
               </article>
             ))}
           </div>
